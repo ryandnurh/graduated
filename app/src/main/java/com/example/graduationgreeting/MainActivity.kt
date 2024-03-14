@@ -13,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -29,7 +30,11 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    GreetingText(message = "Happy Graduation Anne!", from = "From Febryand")
+                    GreetingText(
+                        message = "Happy Graduation Anne!",
+                        from = "From Febryand",
+                        pesan = "Congrats, hope you will get the job you wanted as soon as possible:D"
+                    )
                 }
             }
         }
@@ -37,7 +42,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun GreetingText(message : String, from : String, modifier : Modifier = Modifier) {
+fun GreetingText(message : String, from : String, pesan : String, modifier : Modifier = Modifier) {
     Column (
 
         verticalArrangement = Arrangement.Center,
@@ -51,8 +56,15 @@ fun GreetingText(message : String, from : String, modifier : Modifier = Modifier
         )
 
         Text(
+            text = pesan,
+            fontSize = 25.sp,
+            textAlign = TextAlign.Justify
+            )
+
+        Text(
             text = from,
             fontSize = 20.sp,
+            fontStyle = FontStyle.Italic,
             modifier = modifier
                 .padding(16.dp)
                 .align(alignment = Alignment.End)
@@ -63,7 +75,9 @@ fun GreetingText(message : String, from : String, modifier : Modifier = Modifier
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    GraduationGreetingTheme {
-        GreetingText(message = "Happy Graduation Anne!", from = "From Febryand")
-    }
+    GreetingText(
+        message = "Happy Graduation Anne!",
+        from = "From Febryand",
+        pesan = "Congrats, hope you will get the job you wanted as soon as possible:D"
+    )
 }
