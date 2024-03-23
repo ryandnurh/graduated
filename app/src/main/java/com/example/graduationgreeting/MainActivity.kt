@@ -67,12 +67,12 @@ fun GreetingText(message : String, from : String, pesan : String, modifier : Mod
         Text(
             text = message,
             fontSize = 65.sp,
-            fontFamily = FontFamily.Serif,
+            fontFamily = FontFamily.Monospace,
             lineHeight = 90.sp,
             textAlign = TextAlign.Center,
             style = TextStyle(
                 shadow = Shadow(
-                    color = Color.White,
+                    color = Color.Black,
                     offset = Offset(x = 5.0f, y = 10.0f),
                     blurRadius = 1.0f
                 )
@@ -82,14 +82,16 @@ fun GreetingText(message : String, from : String, pesan : String, modifier : Mod
         Text(
             text = pesan,
             fontSize = 25.sp,
-            textAlign = TextAlign.Justify,
             style = TextStyle(
                 shadow = Shadow(
-                    color = Color.White,
+                    color = Color.Black,
                     offset = Offset(x = 5.0f, y = 4.0f),
                     blurRadius = 5.0f
                 )
-            )
+            ),
+            modifier = modifier
+                .padding(16.dp)
+                .align(alignment = Alignment.CenterHorizontally)
         )
 
         Text(
@@ -99,7 +101,7 @@ fun GreetingText(message : String, from : String, pesan : String, modifier : Mod
             fontStyle = FontStyle.Italic,
             style = TextStyle(
                 shadow = Shadow(
-                    color = Color.White,
+                    color = Color.Black,
                     offset = Offset(x = 5.0f, y = 10.0f),
                     blurRadius = 20.0f
                 )
